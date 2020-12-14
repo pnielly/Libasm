@@ -1,1 +1,16 @@
 Bonjour
+
+
+
+To do : 
+ft_write.s --> error
+ft_strdup.s
+ft_read.s --> error
+
+Done : 
+ft_strlen.s
+ft_read.s
+ft_strcmp.s
+ft_strcpy.s
+
+ft_atoi_base.s

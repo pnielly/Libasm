@@ -6,21 +6,23 @@ ft_strcmp:
 while:
 	mov	al, byte [rdi + rcx] ; comparing s1[rcx] and s2[rcx] 
 	cmp	al, byte [rsi + rcx]  ;  using a 8-bit registry as intermediary
-	jg	greater
-	jl	lower
-	cmp	al, byte 0	; is it the end of s1 (and therefore of s2)?
+;	jg	greater
+;	jl	lower
+	jne	end
+	cmp	al, byte 0	; reached the end of s1
 	je	end
 	inc	rcx
 	jmp	while
 
-greater:
-	mov	rax, 1
-	ret
+;greater:
+;	mov	rax, 1
+;	ret
 
-lower:
-	mov	rax, -1
-	ret
+;lower:
+;	mov	rax, -1
+;	ret
 
 end:
-	mov	rax, 0
+	mov	rax, [rdi + rcx]
+	sub	rax, [rsi + rcx]
 	ret
