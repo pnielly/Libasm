@@ -22,13 +22,13 @@ tester:	$(OBJS) $(NAME)
 clean:
 	rm -rf *.o
 	rm -rf bonus/*.o
+	rm -rf ft_write.txt
+	rm -rf write.txt
 
 fclean: clean
 	rm -rf $(NAME)
 	rm -rf tester
 	rm -rf bonus_tester
-	rm -rf ft_write.txt
-	rm -rf write.txt
 
 bonus: fclean $(OBJS) $(OBJS_BONUS)
 	ar rc $(NAME) $(OBJS) $(OBJS_BONUS)

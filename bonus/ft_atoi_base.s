@@ -30,21 +30,21 @@ base_length:
 checking_duplicate:	; if a char appears more than once in base : error
 	mov	r10b, byte [rsi + rcx]	; r10 will hold the currently checked char (r10b is 8-bit)
 	mov	r11, rcx	; saving current index of base
-	cmp	r10, 43	; r10 = '+'?
+	cmp	r10b, 43	; r10 = '+'?
 	je	error	; base can't harbor '+' or '-'
-	cmp	r10, 45	; r10 = '-'?
+	cmp	r10b, 45	; r10 = '-'?
 	je	error	; base can't harbor '+' or '-'
-	cmp	r10, 32	; r10 = ' '?
+	cmp	r10b, 32	; r10 = ' '?
 	je	error	; base can't harbor whitespace
-	cmp	r10, 12	; r10 = '\f'?
+	cmp	r10b, 12	; r10 = '\f'?
 	je	error	; base can't harbor whitespace
-	cmp	r10, 9	; r10 = '\t'?
+	cmp	r10b, 9	; r10 = '\t'?
 	je	error	; base can't harbor whitespace
-	cmp	r10, 10	; r10 = '\n'?
+	cmp	r10b, 10	; r10 = '\n'?
 	je	error	; base can't harbor whitespace
-	cmp	r10, 13	; r10 = '\r'?
+	cmp	r10b, 13	; r10 = '\r'?
 	je	error	; base can't harbor whitespace
-	cmp	r10, 11	; r10 = '\v'?
+	cmp	r10b, 11	; r10 = '\v'?
 	je	error	; base can't harbor whitespace
 
 loop_dup:
@@ -127,6 +127,7 @@ end_loop:
 	jg	return
 	neg	rax
 
+; RETURN
 return:
 	ret
 
