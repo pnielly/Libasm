@@ -7,7 +7,12 @@ SRCS_BONUS = $(wildcard bonus/*.s)
 OBJS = $(SRCS:.s=.o)
 OBJS_BONUS = $(SRCS_BONUS:.s=.o)
 
+NC=\033[0;0m
+GREEN=\033[3;32m
+BLINK=\e[5m
+
 all: $(NAME)
+	@echo "\n\n\t\t	${GREEN}${NAME} ready !${NC}\n\n"
 
 $(NAME) : $(OBJS)
 	ar rc $(NAME) $(OBJS)
