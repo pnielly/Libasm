@@ -2,8 +2,11 @@ NAME = libasm.a
 FLAGS = -Wall -Werror -Wextra
 FLAGS_ASM = -felf64
 
-SRCS = $(wildcard *.s)
-SRCS_BONUS = $(wildcard bonus/*.s)
+SRCS_PATH=src
+SRCS_BONUS_PATH=src_bonus
+
+SRCS = $(wildcard $(SRCS_PATH)/*.s)
+SRCS_BONUS = $(wildcard $(SRCS_BONUS_PATH)/*.s)
 OBJS = $(SRCS:.s=.o)
 OBJS_BONUS = $(SRCS_BONUS:.s=.o)
 
