@@ -28,8 +28,8 @@ tester:	$(OBJS) $(NAME)
 	nasm $(FLAGS_ASM) $<
 
 clean:
-	rm -rf *.o
-	rm -rf bonus/*.o
+	rm -rf src/*.o
+	rm -rf src_bonus/*.o
 	rm -rf ft_write.txt
 	rm -rf write.txt
 

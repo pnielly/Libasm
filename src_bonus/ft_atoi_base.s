@@ -131,11 +131,11 @@ end_loop:
 return:
 	ret
 
+; ERROR CASES
 no_nb:
 	xor	rax, rax	; rax = 0
 	ret			; return (0)
 
-; ERROR CASES
 error:
 	xor	rax, rax	; rax = 0
 	ret			; return (0)
